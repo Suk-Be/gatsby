@@ -1,51 +1,76 @@
-##single page webapp
-The project is rudimentary based on Gatsby's default starter.
-To setup a default configuration for the programming interface.
+# I/O Tool for maintaining items in storage
+## The project is not production ready
+The project was killed because of missing ressources and re-prioritizing.
 
-##Design System
+Some of the frontend is done and uses react with gatsby. Worth mentioning is the robust and scalable design system.
+
+## Design System
 A Design system is used to be flexible on changes to the code and make the system configurable for other projects
-####Typography
+
+#### Typography
 webfonts are used in two ways
 - selfhosting (with gatsby-browser.js)
 - google fonts (with npm gatsby-plugin-web-font-loader, configured in gatsby-config.js)
 
-####Styled Components and global css
+#### Styled Components and global css
 global styles are used to keep the styling code dry
 - utils/css/index.js
 - styled components are used to style html tags
 
-####Layout Grid system
-- header component should always be on top
-- footer component should always be on bottom
-- main component should use the remaining space responsively to fill in the content
+#### Layout system
+The common layout for all pages is a wrapper component which can be found in the folder **src/components/allPages**.
 
-####Postioning Elements with spans
-- span.js exports 
-- vertical and horizontal alignments of contents 
+#### Component system
+The pain in many constantly growing enterprise react eco systems is the growth of the component amount.
+Which comes with a price of increasing communication and additional effort to avoid duplicates.
 
-####Module based Responsive Typography
+The component architecture is designed to be capped by the size of available html tags.
+
+Styled components declarative instances with their own styling props to make them scale nicely in one place to look for. 
+ 
+An extreme example would be input.js. that has
+- type button 
+    - reset
+    - submit
+    - login
+    - logout
+- type text
+    - name
+    - etc.
+- type radio, number, password, range, file, date, email
+
+
+An common example would be headline.js. that is styled individually
+- headline
+- subheadline
+
+##### Divs and Spans
+are used for layout purposes
+- vertical and horizontal alignments of contents within the wrapped component
+- vertical and horizontal spaces between components in macro layouts
+
+#### Measurements
+**Fonts**
 https://css-tricks.com/rems-ems/
 - rem for main (html tag)
-- em for children of main 
-
-####Unit measuring system
-layout grid: gaps, rows and paddings
-- percentage
-- fr
-- vh
-
-components: gaps, rows and paddings
+- em for all children of main
+  
+**gaps, rows and paddings**
 - rem for main (html tag)
-- em for children of main 
+- em for all children of main
+  
+**Unit measuring system**
+  layout grid: gaps, rows and paddings
+- percentage (relative to parent)
+- fr (dynamic spacing)
+- vh (whole screen events)
 
-Typography, Main, Header and Footer: dynamic css rendering
-- fluid calculation of pixel units based on view port width a max value and a min value
+
+**fluid Base Grid**
+- seamless responsive behaviour on resizing the browser
+- JS Function fluidCSS() calculates parameters for css calc() function so that the heavy lifting on restyling the page is done by css and the browser 
 - https://www.madebymike.com.au/writing/precise-control-responsive-typography/
 - https://nilsb.org/2019-02-12-sass-mixins-in-styled-components/ 
-
-Own imlementation with fluidCSS() function
-
-####Responsive Baseline Grid
 
 
 ## Testing
@@ -72,13 +97,13 @@ yet to be done
 - cypress.io prototype
 - storybook prototype
 
-####Libraries
+#### Libraries
 
 CSS-in-JS
 - styled-components https://styled-components.com/
 
 Compose Theming
-- Grommet V2 https://v2.grommet.io/
+- Grommet V2 https://v2.grommet.io/, yet to be realized ...
 
 ---
 
@@ -96,7 +121,7 @@ Kick off your project with this default boilerplate. This starter ships with the
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
-####Deploy
+#### Deploy
 For internal preasentation purposes a student account for surge.hs is used
 
 Steps
@@ -108,7 +133,7 @@ previous http://diligent-achieve.surge.sh/
 previous http://clumsy-things.surge.sh/
 current http://taboo-ball.surge.sh/
 
-
+# Gatsby default documentation
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
