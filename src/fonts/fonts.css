@@ -1,0 +1,21 @@
+@font-face {
+  font-display: auto;
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-display: auto;
+  font-family: 'Noto Sans Bold';
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-display: auto;
+  font-family: 'DWTheAntiquaB';
+  font-style: normal;
+  src: url('DWTheAntiquaB-W6SemiBold.woff2') format('woff2'),
+    url('DWTheAntiquaB-W6SemiBold.woff') format('woff');
+}
